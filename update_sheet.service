@@ -1,0 +1,14 @@
+[Unit]
+Description=Update Dojo Scoreboard Google Sheet
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=root
+ExecStart=/usr/bin/env python3 /var/update_sheet/update_sheet.py NUMBER
+
+[Install]
+WantedBy=multi-user.target
